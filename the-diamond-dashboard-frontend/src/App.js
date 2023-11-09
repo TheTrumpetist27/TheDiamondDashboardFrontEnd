@@ -1,35 +1,15 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarComp from './components/NavbarComp';
 
-class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      name: 'Kian'
-    }
-  }
-
-  render() {
+ function App() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hi {this.state.name}
-          </p>
-          <button 
-          onClick={() => {
-            this.setState({ name: 'Ivar' });
-          }}
-          >
-            Change name</button>
-        </header>
+        <NavbarComp/>
       </div>
     );
   }
-}
 
 export default App;
