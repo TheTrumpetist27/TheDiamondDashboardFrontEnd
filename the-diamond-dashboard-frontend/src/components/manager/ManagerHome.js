@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getManagerList } from '../../services/ManagerService';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
 const ManagerList = () => {
   const [managers, setManagers] = useState([]);
@@ -20,11 +21,29 @@ const ManagerList = () => {
   return (
     <div>
       <h2>Managerlijst</h2>
-      <ul>
+      <p>
+        <Link to={"/manager/add"}>voeg manager toe</Link>
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Club Name
+            </th>
+          </tr>
+        </thead>
+        <tbody>
         {managers.map(manager => (
-          <li key={manager.id}>{manager.name}</li>
+          <tr>
+            <td key={manager.id}>{manager.name}</td>
+            <td>{manager.clubName}</td>
+          </tr>
         ))}
-      </ul>
+        </tbody>
+      </table>
     </div>
   );
 };

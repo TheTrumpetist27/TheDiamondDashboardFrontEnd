@@ -6,6 +6,7 @@ import PlayerHome from './player/PlayerHome';
 import TeamHome from './team/TeamHome';
 import GameHome from './game/GameHome';
 import ManagerHome from './manager/ManagerHome';
+import ManagerCreate from './manager/ManagerCreate';
 
 export default class NavbarComp extends Component {
   render() {
@@ -35,6 +36,7 @@ export default class NavbarComp extends Component {
                 <Route path='/team' element={<TeamHome />} />
                 <Route path='/game' element={<GameHome />} />
                 <Route path='/manager' element={<ManagerHome />} />
+                <Route path='/manager/add' element={<ManagerCreate />} />
             </Routes>
         </div>
     </Router>
